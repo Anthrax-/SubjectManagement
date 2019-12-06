@@ -27,20 +27,3 @@ void CSVFile::Save(vector<string> Lines)
 		Stream << Lines[i] << endl;
 	}
 }
-static vector<string> ParseLine(string line)
-{
-	vector<string> strings;
-	string s;
-	for (int i = 0; i < line.size(); i++)
-	{
-		s += line[i];
-		if (line[i] == ',')
-		{
-			s.pop_back();
-			strings.push_back(s);
-			s = "";
-		}
-	}
-	strings.push_back(s);
-	return strings;
-}

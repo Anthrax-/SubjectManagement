@@ -10,7 +10,6 @@ class CSVFile
 	~CSVFile();
 	vector<string> Load();
 	void Save(vector<string> Lines);
-	static vector<string> ParseLine(string line);
 	private:
 	fstream Stream;
 	string Path;
