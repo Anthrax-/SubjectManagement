@@ -14,7 +14,7 @@ vector<Course> Course::LoadCourses()
 		course.Hours = stoi(parsedLine[2]);
 		course.MaxNumOfStudents = stoi(parsedLine[3]);
 		vector<string> PreCourses;
-		for (int i = 3; i < parsedLine.size(); i++)
+		for (int i = 4; i < parsedLine.size(); i++)
 			PreCourses.push_back(parsedLine[i]);
 		course.PreRequiredCourses = PreCourses;
 		Result.push_back(course);

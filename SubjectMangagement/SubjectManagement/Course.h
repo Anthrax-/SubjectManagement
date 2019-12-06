@@ -4,6 +4,7 @@
 using namespace std;
 class Course
 {
+	public:
 	string Name;
 	string Code;
 	int MaxNumOfStudents;
