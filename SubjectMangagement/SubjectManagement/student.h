@@ -2,13 +2,13 @@
 #include"Course.h"
 #include"user.h"
 #include"vector"
-class student : public user  
+class student : public User  
 	
 {
 public:
 	long ID;
 	int Academicyear;
-vector<Course> finishedcourses,coursesinprogress;
+	vector<Course> FinishedCourses,CoursesInProgress;
 	void Editdata();
 	void viewcourses();
 	void registerforacourse();

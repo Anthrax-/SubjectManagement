@@ -5,9 +5,10 @@ using namespace std;
 class Course
 {
 	string Name;
-	int Code;
+	string Code;
 	int MaxNumOfStudents;
 	int Hours;
-	vector<Course> PreRequiredCourses;
+	vector<string> PreRequiredCourses;
+	static vector<Course> LoadCourses();
 };
 

@@ -2,6 +2,10 @@
 
 
 
+void student::Editdata()
+{
+}
+
 student::student()
 {
 }
