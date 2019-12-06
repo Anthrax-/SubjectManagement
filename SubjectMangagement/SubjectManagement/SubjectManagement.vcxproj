@@ -126,6 +126,7 @@
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Course.cpp" />
     <ClCompile Include="CSVFile.cpp" />
+    <ClCompile Include="database.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="student.cpp" />
     <ClCompile Include="User.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="Admin.h" />
     <ClInclude Include="Course.h" />
     <ClInclude Include="CSVFile.h" />
+    <ClInclude Include="database.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
