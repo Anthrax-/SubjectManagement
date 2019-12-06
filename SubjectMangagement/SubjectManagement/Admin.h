@@ -2,6 +2,9 @@
 #include <string>
 #include <iostream>
 #include "User.h"
+#include <vector>
+#include "Course.h"
+
 using namespace std;
 class Admin : public User
 {
@@ -9,8 +12,8 @@ public:
 	void AddNewStudent();
 	void AddNewCourse();
 	void EnterCoursePrerequisite();
-	void VLOASiSC();
-	void VLOACOSS();
+	vector<Course> ViewAvilableCourses();
+	void ViewStudentsInCourse(int CourseID);
 	void EACD();
 };
 

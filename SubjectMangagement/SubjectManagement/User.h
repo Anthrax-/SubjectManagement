@@ -7,5 +7,6 @@ class User
 	void Login();
 	string Name;
 	string Password;
+	int ID;
 };
 

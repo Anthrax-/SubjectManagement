@@ -13,17 +13,17 @@ void Admin::EnterCoursePrerequisite()
 {
 }
 
-
-void Admin::VLOASiSC()
+vector<Course> Admin::ViewAvilableCourses()
 {
+	return vector<Course>();
 }
 
-
-void Admin::VLOACOSS()
+void Admin::ViewStudentsInCourse(int CourseID)
 {
 }
-
 
 void Admin::EACD()
 {
 }
+
+

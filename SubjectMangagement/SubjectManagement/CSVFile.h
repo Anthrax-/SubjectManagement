@@ -7,9 +7,10 @@ class CSVFile
 {
 	public:
 	CSVFile(string path);
-	~CSVFile();
 	vector<string> Load();
+	static vector<string> ParseLine(string line);
 	void Save(vector<string> Lines);
+	~CSVFile();
 	private:
 	fstream Stream;
 	string Path;
