@@ -1,13 +1,14 @@
 #pragma once
 #include"Course.h"
 #include"user.h"
+#include"vector"
 class student : public user  
 	
 {
 public:
 	long ID;
 	int Academicyear;
-	Course finishedcourses,coursesinprogress;
+vector<Course> finishedcourses,coursesinprogress;
 	void Editdata();
 	void viewcourses();
 	void registerforacourse();
