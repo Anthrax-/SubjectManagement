@@ -1,7 +1,4 @@
 #include "Admin.h"
-void Admin::Login()
-{
-}
 
 void Admin::AddNewStudent()
 {

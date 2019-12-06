@@ -1,13 +1,11 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "User.h"
 using namespace std;
-class Admin
+class Admin : public User
 {
-	string Name;
-	string Password;
 public:
-	void Login();
 	void AddNewStudent();
 	void AddNewCourse();
 	void EnterCoursePrerequisite();
