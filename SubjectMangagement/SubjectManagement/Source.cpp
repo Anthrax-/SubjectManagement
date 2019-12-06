@@ -1,6 +1,6 @@
 #include<iostream>
 #include"CSVFile.h"
-
+#include<string>
 using namespace std;
 vector<string> ParseLine(string line)
 {
