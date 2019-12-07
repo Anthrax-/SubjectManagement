@@ -16,15 +16,23 @@ Course Database::GetCourse(string courseID) //farah
 	//if not found return null
 }
 
-User Database::GetUserByID(int userID)//samir
+User Database::GetUserByID(int userID)
 {
-	//this function should return user with the id in parameters
-	//if not found return null
+	for (int i = 0; i < Users.size; i++)
+	{
+		if (userID == Users[i].ID)
+			return Users[i];
+		else return;
+	}
 }
-User Database::GetUserByUsername(string username)//samir
+User Database::GetUserByUsername(string username)
 {
-	//this function should return user with the username
-	//if not found return null
+	for (int i = 0; i < Users.size; i++)
+	{
+		if (username == Users[i].Username)
+			return Users[i];
+		else return;
+	}
 }
 vector<User> Database::GetUsers(int Role)//samir
 {
