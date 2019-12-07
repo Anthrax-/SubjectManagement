@@ -4,16 +4,16 @@
 using namespace std;
 string fun(vector<string>v)
 {
-	string word;
+	string w;
 
 	for (int i = 0; i < v.size(); i++)
 	{
-		word += v[i];
+		w += v[i];
 		if (i != (v.size() - 1))
-			word += ",";
+			w += ",";
 
 	}
-	return word;
+	return w;
 }
 
 vector<string> ParseLine(string line)
