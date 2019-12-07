@@ -1,11 +1,12 @@
 #pragma once
 #include"Course.h"
-#include"user.h"
+#include"User.h"
 #include"vector"
 class student : public User  
 	
 {
 public:
+	student(int userID);
 	int Academicyear;
 	vector<Course> FinishedCourses,CoursesInProgress;
 	void Editdata();
