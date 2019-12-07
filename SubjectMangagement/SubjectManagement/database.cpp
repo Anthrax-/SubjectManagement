@@ -12,9 +12,16 @@ void Database::load() {
 }
 Course Database::GetCourse(string courseID) //farah
 {
-	//this function should loop through courses vector and return the course with the courseid.
 	Course c;
-	return c;
+	for (int i = 0; i < courses.size(); i++)
+	{
+		if (courseID == Courses[i].Code) {
+			
+			return Courses[i];
+		}
+	}
+	
+	
 }
 
 User Database::GetUserByID(int userID)
@@ -54,8 +61,6 @@ vector<Course> Database::GetPreRequiredCourses(Course course)//farah
 {
 	//this function should take a course return a vector that countains all the pre-required courses 
 	//it should use the GetCourse Function
-		return vector<Course>();
-
 }
 
 
