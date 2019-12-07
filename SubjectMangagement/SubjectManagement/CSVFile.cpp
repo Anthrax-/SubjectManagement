@@ -19,3 +19,11 @@ vector<string> CSVFile::Load()
 	}
 	return result;
 }
+void CSVFile::Save(vector<string> Lines)
+{
+	Stream.seekp(0);
+	for (int i = 0; i < Lines.size(); i++)
+	{
+		Stream << Lines[i] << endl;
+	}
+}
