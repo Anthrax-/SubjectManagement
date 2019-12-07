@@ -1,5 +1,6 @@
 #include"Course.h"
 #include"User.h"
+#include "student.h"
 class Database
 {
 	static vector<Course> Courses;
@@ -14,6 +15,7 @@ public:
 	static User GetUserByID(int userID);
 	static User GetUserByUsername(string username);
 	static vector<User> GetUsers(int Role);
-	 
+	static vector<student> ViewStudentsInCourse(int CourseID);
+	
 };
 

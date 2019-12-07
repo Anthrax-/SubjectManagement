@@ -13,7 +13,6 @@ public:
 	void AddNewCourse();
 	void EnterCoursePrerequisite();
 	vector<Course> ViewAvilableCourses();
-	void ViewStudentsInCourse(int CourseID);
 	void EACD();
 };
 

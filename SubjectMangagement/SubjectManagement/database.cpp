@@ -31,6 +31,11 @@ vector<User> Database::GetUsers(int Role)//samir
 		//this function should return all the users with the role in parameters.
 }
 
+vector<student> Database::ViewStudentsInCourse(int CourseID)
+{
+
+}
+
 vector<Course> Database::GetPreRequiredCourses(Course course)//farah
 {
 	//this function should take a course return a vector that countains all the pre-required courses 
