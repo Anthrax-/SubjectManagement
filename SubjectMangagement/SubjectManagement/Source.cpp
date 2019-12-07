@@ -8,7 +8,7 @@ string fun(vector<string>v)
 
 	for (int i = 0; i < v.size(); i++)
 	{
-		w += v[i];
+		 w += v[i];
 		if (i != (v.size() - 1))
 			w += ",";
 
