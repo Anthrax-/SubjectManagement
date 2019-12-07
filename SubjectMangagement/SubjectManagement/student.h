@@ -15,6 +15,7 @@ public:
 	void registerforacourse();
 	void viewcoursedetails();
 	void viewavailablecourses();
+	vector<student> LoadStudents();
 	student();
 	~student();
 };

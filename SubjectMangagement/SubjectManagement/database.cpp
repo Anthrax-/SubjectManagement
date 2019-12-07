@@ -59,8 +59,12 @@ vector<student> Database::ViewStudentsInCourse(int CourseID)
 
 vector<Course> Database::GetPreRequiredCourses(Course course)//farah
 {
-	//this function should take a course return a vector that countains all the pre-required courses 
-	//it should use the GetCourse Function
+
+	vector<course> r;
+	for (int i = 0; i < course.PreRequiredCourses.size(); i++) {
+		r.push_back(GetCourse(course.PreRequiredCourses[i]));
+	}
+	return r;
 }
 
 
