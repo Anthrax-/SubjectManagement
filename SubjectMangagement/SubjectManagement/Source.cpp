@@ -2,41 +2,21 @@
 #include"CSVFile.h"
 
 using namespace std;
-string fun(vector<string>v)
-{
-	string w;
+string fun(vector<string>v)	
+{	
+	string word;	
 
-	for (int i = 0; i < v.size(); i++)
-	{
-		 w += v[i];
-		if (i != (v.size() - 1))
-			w += ",";
+	for (int i = 0; i < v.size(); i++)	
+	{	
+		word += v[i];	
+		if (i != (v.size() - 1))	
+			word += ",";	
 
-	}
-	return w;
-}
-
-vector<string> ParseLine(string line)
-{
-	vector<string> strings;
-	string s;
-	for (int i = 0; i < line.size(); i++)
-	{
-		s += line[i];
-		if (line[i] == ',')
-		{
-			s.pop_back();
-			strings.push_back(s);
-			s = "";
-		}
-	}
-	strings.push_back(s);
-	return strings;
+	}	
+	return word;	
 }
 int main()
 {
-	string t = "1,2,3,4,5,4,3asfasd,2";
-	auto res = ParseLine(t);
 	
 	return 0;
 }

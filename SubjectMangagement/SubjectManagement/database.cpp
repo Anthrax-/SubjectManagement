@@ -1,6 +1,6 @@
 #include "Database.h"
-
-
+vector<Course> Database::Courses; // to prevent linking error
+vector<User> Database::Users; // to prevent linking error
 
 Database::Database()
 {
@@ -13,7 +13,7 @@ void Database::load() {
 Course Database::GetCourse(string courseID) //farah
 {
 	Course c;
-	for (int i = 0; i < courses.size(); i++)
+	for (int i = 0; i < Courses.size(); i++)
 	{
 		if (courseID == Courses[i].Code) {
 			
@@ -31,6 +31,7 @@ User Database::GetUserByID(int userID)
 		if (userID == Users[i].ID)
 			return Users[i];
 	}
+	return User();
 }
 User Database::GetUserByUsername(string username)
 {
@@ -39,6 +40,7 @@ User Database::GetUserByUsername(string username)
 		if (username == Users[i].Username)
 			return Users[i];
 	}
+	return User();
 }
 vector<User> Database::GetUsers(int Role)
 {
@@ -52,14 +54,15 @@ vector<User> Database::GetUsers(int Role)
 
 vector<student> Database::ViewStudentsInCourse(int CourseID)
 {
-
+	return vector<student>();
 }
 
 vector<Course> Database::GetPreRequiredCourses(Course course)//farah
 {
 
-	vector<course> r;
-	for (int i = 0; i < course.PreRequiredCourses.size(); i++) {
+	vector<Course> r;
+	for (int i = 0; i < course.PreRequiredCourses.size(); i++) 
+	{
 		r.push_back(GetCourse(course.PreRequiredCourses[i]));
 	}
 	return r;

@@ -1,3 +1,5 @@
+#pragma once
+#include <vector>
 #include"Course.h"
 #include"User.h"
 #include "student.h"
