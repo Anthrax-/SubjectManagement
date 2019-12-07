@@ -34,9 +34,14 @@ User Database::GetUserByUsername(string username)
 		else return;
 	}
 }
-vector<User> Database::GetUsers(int Role)//samir
+vector<User> Database::GetUsers(int Role)
 {
-		//this function should return all the users with the role in parameters.
+	vector<User> Result;
+	for (int i = 0; i < Users.size; i++)
+		if (Role == Users[i].Role)
+			Result.push_back(Users[i]);
+	return Result;
+	
 }
 
 vector<Course> Database::GetPreRequiredCourses(Course course)//farah
