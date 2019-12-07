@@ -13,31 +13,30 @@ void Database::load() {
 Course Database::GetCourse(string courseID) //farah
 {
 	//this function should loop through courses vector and return the course with the courseid.
-	//if not found return null
+	Course c;
+	return c;
 }
 
 User Database::GetUserByID(int userID)
 {
-	for (int i = 0; i < Users.size; i++)
+	for (int i = 0; i < Users.size(); i++)
 	{
 		if (userID == Users[i].ID)
 			return Users[i];
-		else return;
 	}
 }
 User Database::GetUserByUsername(string username)
 {
-	for (int i = 0; i < Users.size; i++)
+	for (int i = 0; i < Users.size(); i++)
 	{
 		if (username == Users[i].Username)
 			return Users[i];
-		else return;
 	}
 }
 vector<User> Database::GetUsers(int Role)
 {
 	vector<User> Result;
-	for (int i = 0; i < Users.size; i++)
+	for (int i = 0; i < Users.size(); i++)
 		if (Role == Users[i].Role)
 			Result.push_back(Users[i]);
 	return Result;
