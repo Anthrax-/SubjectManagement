@@ -1,4 +1,5 @@
 #include "User.h"
+#include "CSVFile.h"
 
 void User::Login()
 {
@@ -16,6 +17,7 @@ vector<User> User::LoadUsers()
 		u.ID = stoi(parsedLine[0]);
 		u.Name = parsedLine[1];
 		u.Password = parsedLine[2];
+		u.Role = stoi(parsedLine[3]);
 		Result.push_back(u);
 	}
 	return Result;

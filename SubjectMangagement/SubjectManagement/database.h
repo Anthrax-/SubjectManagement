@@ -1,13 +1,18 @@
 #include"Course.h"
 #include"User.h"
-class database
+class Database
 {
-	static vector<Course> courses;
-	static vector<User> users;
+	static vector<Course> Courses;
+	static vector<User> Users;
 
 public:
-	database();
+	Database();
+	~Database();
 	static void load();
-	~database();
+	static vector<Course> GetPreRequiredCourses(Course course);
+	static Course GetCourse(string courseID);
+	static vector<User> GetUser(int userID);
+	static vector<User> GetUsers(int Role);
+	 
 };
 
