@@ -10,6 +10,7 @@ public:
 	int Academicyear;
 	vector<Course> FinishedCourses,CoursesInProgress;
 	void Editdata();
+	bool CanTakeCourse(Course course);
 	void viewcourses();
 	void registerforacourse();
 	void viewcoursedetails();

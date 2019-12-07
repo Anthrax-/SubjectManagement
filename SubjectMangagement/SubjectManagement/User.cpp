@@ -1,8 +1,9 @@
 #include "User.h"
 #include "CSVFile.h"
 
-void User::Login()
+bool User::Login(string password)
 {
+	return Password == password;
 }
 
 vector<User> User::LoadUsers()

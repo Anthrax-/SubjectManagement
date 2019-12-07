@@ -5,8 +5,9 @@ using namespace std;
 class User
 {
 	public:
-	void Login();
+	bool Login(string password);
 	string Name;
+	string Username;
 	string Password;
 	int ID;
 	int Role;

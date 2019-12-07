@@ -13,17 +13,22 @@ void Database::load() {
 Course Database::GetCourse(string courseID) //farah
 {
 	//this function should loop through courses vector and return the course with the courseid.
+	//if not found return null
 }
 
-vector<User> Database::GetUser(int userID)//samir
+User Database::GetUserByID(int userID)//samir
 {
 	//this function should return user with the id in parameters
+	//if not found return null
 }
-
+User Database::GetUserByUsername(string username)//samir
+{
+	//this function should return user with the username
+	//if not found return null
+}
 vector<User> Database::GetUsers(int Role)//samir
 {
 		//this function should return all the users with the role in parameters.
-
 }
 
 vector<Course> Database::GetPreRequiredCourses(Course course)//farah

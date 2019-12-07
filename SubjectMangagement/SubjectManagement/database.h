@@ -11,7 +11,8 @@ public:
 	static void load();
 	static vector<Course> GetPreRequiredCourses(Course course);
 	static Course GetCourse(string courseID);
-	static vector<User> GetUser(int userID);
+	static User GetUserByID(int userID);
+	static User GetUserByUsername(string username);
 	static vector<User> GetUsers(int Role);
 	 
 };
