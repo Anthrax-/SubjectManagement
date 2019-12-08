@@ -1,6 +1,6 @@
 #include "student.h"
-#include "Database.h"
-
+#include "database.h"
+#include "CSVFile.h"
 
 student::student(int userID) : User()
 {
@@ -31,8 +31,7 @@ vector<student> student::LoadStudents()
 	for (auto line : lines)
 	{
 		auto parsedLine = CSVFile::ParseLine(line);
-		student std;
-		std.ID = stoi(parsedLine[0]);
+		student std(stoi(parsedLine[0]));
 		std.Academicyear = stoi(parsedLine[1]);
 		auto numFinished = stoi(parsedLine[2]);
 		auto numProgrs = stoi(parsedLine[3]);
