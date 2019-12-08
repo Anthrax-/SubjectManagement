@@ -18,10 +18,6 @@ vector<Course> Admin::ViewAvilableCourses()
 	return vector<Course>();
 }
 
-void Admin::ViewStudentsInCourse(int CourseID)
-{
-}
-
 void Admin::EACD()
 {
 }//****************************

@@ -1,44 +1,76 @@
 #include "Database.h"
-
-
-
+#include "CSVFile.h"
+vector<Course> Database::Courses; // to prevent linking error
+vector<User> Database::Users; 
+vector<student> Database::Students; 
 Database::Database()
 {
 }
-void Database::load() {
+void Database::Save()
+{
+	CSVFile CoursesFile("courses.csv");
+	CSVFile UsersFile("users.csv");
+	CSVFile StudFile("Students.csv");
+	
+}
+
+void Database::load() 
+{
 	Database:: Courses = Course::LoadCourses();
 	Database::Users = User::LoadUsers();
+	Database::Students = student::LoadStudents();
 
 }
 Course Database::GetCourse(string courseID) //farah
 {
-	//this function should loop through courses vector and return the course with the courseid.
-	//if not found return null
+	Course c;
+	for (int i = 0; i < Courses.size(); i++)
+	{
+		if (courseID == Courses[i].Code) {
+			
+			return Courses[i];
+		}
+	}
+	
+	
 }
-
-User Database::GetUserByID(int userID)//samir
+User Database::GetUserByID(int userID)
 {
-	//this function should return user with the id in parameters
-	//if not found return null
+	for (int i = 0; i < Users.size(); i++)
+	{
+		if (userID == Users[i].ID)
+			return Users[i];
+	}
+	return User();
 }
-User Database::GetUserByUsername(string username)//samir
+User Database::GetUserByUsername(string username)
 {
-	//this function should return user with the username
-	//if not found return null
+	for (int i = 0; i < Users.size(); i++)
+	{
+		if (username == Users[i].Username)
+			return Users[i];
+	}
+	return User();
 }
-vector<User> Database::GetUsers(int Role)//samir
+vector<User> Database::GetUsers(int Role)
 {
-		//this function should return all the users with the role in parameters.
+	vector<User> Result;
+	for (int i = 0; i < Users.size(); i++)
+		if (Role == Users[i].Role)
+			Result.push_back(Users[i]);
+	return Result;
+	
 }
-
 vector<Course> Database::GetPreRequiredCourses(Course course)//farah
 {
-	//this function should take a course return a vector that countains all the pre-required courses 
-	//it should use the GetCourse Function
+
+	vector<Course> r;
+	for (int i = 0; i < course.PreRequiredCourses.size(); i++) 
+	{
+		r.push_back(GetCourse(course.PreRequiredCourses[i]));
+	}
+	return r;
 }
-
-
-
 Database::~Database()
 {
 }
