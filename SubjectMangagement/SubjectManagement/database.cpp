@@ -13,7 +13,7 @@ void Database::load() {
 Course Database::GetCourse(string courseID) //farah
 {
 	Course c;
-	for (int i = 0; i < courses.size(); i++)
+	for (int i = 0; i < Courses.size(); i++)
 	{
 		if (courseID == Courses[i].Code) {
 			
@@ -60,8 +60,9 @@ vector<student> Database::ViewStudentsInCourse(int CourseID)
 vector<Course> Database::GetPreRequiredCourses(Course course)//farah
 {
 
-	vector<course> r;
-	for (int i = 0; i < course.PreRequiredCourses.size(); i++) {
+	vector<Course> r;
+	for (int i = 0; i < course.PreRequiredCourses.size(); i++) 
+	{
 		r.push_back(GetCourse(course.PreRequiredCourses[i]));
 	}
 	return r;
