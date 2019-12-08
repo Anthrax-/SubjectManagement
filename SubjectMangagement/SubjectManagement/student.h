@@ -11,11 +11,13 @@ public:
 	vector<string> FinishedCourses,CoursesInProgress;
 	void Editdata();
 	bool CanTakeCourse(Course course);
+	bool HaveCourseInProgress(string courseid);
+	bool HaveFinishedCourse(string courseid);
 	void viewcourses();
 	void registerforacourse();
 	void viewcoursedetails();
 	void viewavailablecourses();
-	vector<student> LoadStudents();
+	static vector<student> LoadStudents();
 	student();
 	~student();
 };

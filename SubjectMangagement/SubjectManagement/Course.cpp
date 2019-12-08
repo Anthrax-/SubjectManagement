@@ -1,10 +1,12 @@
 #include "Course.h"
 #include "CSVFile.h"
+#include "Database.h"
+
 vector<Course> Course::LoadCourses()
 {
 	vector<Course> Result;
-	CSVFile UsersFile("courses.csv");
-	auto lines = UsersFile.Load();
+	CSVFile CoursesFile("courses.csv");
+	auto lines = CoursesFile.Load();
 	for (auto line : lines)
 	{
 		auto parsedLine = CSVFile::ParseLine(line);
@@ -20,4 +22,15 @@ vector<Course> Course::LoadCourses()
 		Result.push_back(course);
 	}
 	return Result;
+}
+
+vector<student> Course::GetStudents()
+{
+	vector<student> result;
+	for (auto stud : Database::Students)
+	{
+		if (stud.HaveCourseInProgress(Code))
+			result.push_back(stud);
+	}
+	return result;
 }

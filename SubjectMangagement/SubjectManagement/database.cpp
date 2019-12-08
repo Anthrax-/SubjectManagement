@@ -1,13 +1,24 @@
 #include "Database.h"
+#include "CSVFile.h"
 vector<Course> Database::Courses; // to prevent linking error
-vector<User> Database::Users; // to prevent linking error
-
+vector<User> Database::Users; 
+vector<student> Database::Students; 
 Database::Database()
 {
 }
-void Database::load() {
+void Database::Save()
+{
+	CSVFile CoursesFile("courses.csv");
+	CSVFile UsersFile("users.csv");
+	CSVFile StudFile("Students.csv");
+	
+}
+
+void Database::load() 
+{
 	Database:: Courses = Course::LoadCourses();
 	Database::Users = User::LoadUsers();
+	Database::Students = student::LoadStudents();
 
 }
 Course Database::GetCourse(string courseID) //farah
@@ -23,7 +34,6 @@ Course Database::GetCourse(string courseID) //farah
 	
 	
 }
-
 User Database::GetUserByID(int userID)
 {
 	for (int i = 0; i < Users.size(); i++)
@@ -51,12 +61,6 @@ vector<User> Database::GetUsers(int Role)
 	return Result;
 	
 }
-
-vector<student> Database::ViewStudentsInCourse(int CourseID)
-{
-	return vector<student>();
-}
-
 vector<Course> Database::GetPreRequiredCourses(Course course)//farah
 {
 
@@ -67,9 +71,6 @@ vector<Course> Database::GetPreRequiredCourses(Course course)//farah
 	}
 	return r;
 }
-
-
-
 Database::~Database()
 {
 }

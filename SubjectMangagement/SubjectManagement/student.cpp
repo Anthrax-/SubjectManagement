@@ -12,14 +12,32 @@ student::student(int userID)
 	User::Role = user.Role;
 }
 
-void student::Editdata()
-{
-}
+
 
 bool student::CanTakeCourse(Course course)//godzilla
 {
 	//check the course pre-required courses and check if the student have studed them or no 
 	//if he has studed them return yes else return no
+	return false;
+}
+
+bool student::HaveCourseInProgress(string courseid)
+{
+	for (auto course : CoursesInProgress)
+	{
+		if(course == courseid)
+			return true;
+	}
+	return false;
+}
+
+bool student::HaveFinishedCourse(string courseid)
+{
+	for (auto course : FinishedCourses)
+	{
+		if(course == courseid)
+			return true;
+	}
 	return false;
 }
 
@@ -41,7 +59,7 @@ vector<student> student::LoadStudents()
 		std.CoursesInProgress.push_back(parsedLine[i]);
 		result.push_back(std);
 	}
-
+	
 	return result;
 }
 
