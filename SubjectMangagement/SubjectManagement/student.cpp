@@ -2,7 +2,7 @@
 #include "database.h"
 #include "CSVFile.h"
 
-student::student(int userID) : User()
+student::student(int userID)
 {
 	auto user = Database::GetUserByID(userID);
 	User::Name = user.Name;
