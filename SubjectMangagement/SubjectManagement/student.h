@@ -13,6 +13,8 @@ public:
 	bool HaveCourseInProgress(string courseid);
 	bool HaveFinishedCourse(string courseid);
 	static vector<Student> LoadStudents();
+	static vector<string> GetStudentLines();
+
 	Student();
 	~Student();
 };

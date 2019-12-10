@@ -21,6 +21,8 @@ class Database
 	void AddCourse(string id, string name, int num, int hours, vector<string> prc);
 	static User GetUserByID(int userID);
 	static User GetUserByUsername(string username);
+	static Student GetStudentByID(int userID);
+	static Student GetStudentByUsername(string username);
 	static vector<User> GetUsers(int Role);	
 };
 

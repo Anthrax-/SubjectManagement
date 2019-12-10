@@ -69,6 +69,13 @@ vector<Student> Student::LoadStudents()
 	return result;
 }
 
+vector<string> Student::GetStudentLines()//farah
+{
+	//loop through all students in database::students
+	//write all the variables in the student in order (take the order from the load function) and separate each value by ,
+	//ex:id,academicyear,number of finished courses,number of courses in progress,coursefinished1,coursefinished2,coursefinished3,....,courseinprogress1,courseinprogress2,....
+}
+
 Student::Student()
 {
 }
