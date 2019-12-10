@@ -2,6 +2,23 @@
 #include "CSVFile.h"
 #include "Database.h"
 
+vector<Student> Course::GetStudents()
+{
+	vector<Student> result;
+	for (int i = 0; i < Database::Students.size(); i++)
+	{
+		Student s = Database::Students[i];
+		if (s.HaveCourseInProgress(Code))
+			result.push_back(s);
+	}
+	return result;
+}
+vector<string> Course::GetCoursesLines()//yong
+{
+	//loop in all the elements in the database::courses and generate a string line that contains the data comma separated
+	//see the loadcourses function to know the order of the data
+	//ex : code,name,hourse,maxnumberofstudents,prerequiredcourse1,prerequiredcourse2,......
+}
 vector<Course> Course::LoadCourses()
 {
 	vector<Course> Result;
@@ -22,15 +39,4 @@ vector<Course> Course::LoadCourses()
 		Result.push_back(course);
 	}
 	return Result;
-}
-
-vector<student> Course::GetStudents()
-{
-	vector<student> result;
-	for (auto stud : Database::Students)
-	{
-		if (stud.HaveCourseInProgress(Code))
-			result.push_back(stud);
-	}
-	return result;
 }

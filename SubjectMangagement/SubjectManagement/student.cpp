@@ -1,8 +1,8 @@
-#include "student.h"
+#include "Student.h"
 #include "database.h"
 #include "CSVFile.h"
-
-student::student(int userID)
+#include"Course.h"
+Student::Student(int userID)
 {
 	auto user = Database::GetUserByID(userID);
 	User::Name = user.Name;
@@ -14,14 +14,20 @@ student::student(int userID)
 
 
 
-bool student::CanTakeCourse(Course course)//godzilla
+
+
+bool Student::CanTakeCourse(Course c)
 {
-	//check the course pre-required courses and check if the student have studed them or no 
-	//if he has studed them return yes else return no
-	return false;
+	for (int i = 0; i < c.PreRequiredCourses.size(); i++)
+	{
+		string courseid = c.PreRequiredCourses[i];
+		if (HaveFinishedCourse(courseid) == false)
+			return false;
+	} 
+	return true;
 }
 
-bool student::HaveCourseInProgress(string courseid)
+bool Student::HaveCourseInProgress(string courseid)
 {
 	for (auto course : CoursesInProgress)
 	{
@@ -31,7 +37,7 @@ bool student::HaveCourseInProgress(string courseid)
 	return false;
 }
 
-bool student::HaveFinishedCourse(string courseid)
+bool Student::HaveFinishedCourse(string courseid)
 {
 	for (auto course : FinishedCourses)
 	{
@@ -41,15 +47,15 @@ bool student::HaveFinishedCourse(string courseid)
 	return false;
 }
 
-vector<student> student::LoadStudents()
+vector<Student> Student::LoadStudents()
 {
-	vector<student> result;
+	vector<Student> result;
 	CSVFile StudFile("Students.csv");
 	auto lines = StudFile.Load();
 	for (auto line : lines)
 	{
-		auto parsedLine = CSVFile::ParseLine(line);
-		student std(stoi(parsedLine[0]));
+		vector<string> parsedLine = CSVFile::ParseLine(line);
+		Student std(stoi(parsedLine[0]));
 		std.Academicyear = stoi(parsedLine[1]);
 		auto numFinished = stoi(parsedLine[2]);
 		auto numProgrs = stoi(parsedLine[3]);
@@ -63,11 +69,11 @@ vector<student> student::LoadStudents()
 	return result;
 }
 
-student::student()
+Student::Student()
 {
 }
 
 
-student::~student()
+Student::~Student()
 {
 }

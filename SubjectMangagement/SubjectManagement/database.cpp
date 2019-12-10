@@ -2,7 +2,7 @@
 #include "CSVFile.h"
 vector<Course> Database::Courses; // to prevent linking error
 vector<User> Database::Users; 
-vector<student> Database::Students; 
+vector<Student> Database::Students; 
 Database::Database()
 {
 }
@@ -18,7 +18,7 @@ void Database::load()
 {
 	Database:: Courses = Course::LoadCourses();
 	Database::Users = User::LoadUsers();
-	Database::Students = student::LoadStudents();
+	Database::Students = Student::LoadStudents();
 
 }
 Course Database::GetCourse(string courseID) //farah
@@ -33,6 +33,25 @@ Course Database::GetCourse(string courseID) //farah
 	}
 	
 	
+}
+void Database::AddStudent(int ID,int Year,vector<string> FCourses,vector<string>CinProgress)
+{
+	Student s(ID);
+	s.Academicyear = Year;
+	s.FinishedCourses = FCourses;
+	s.CoursesInProgress = CinProgress;
+	Students.push_back(s);
+
+}
+void Database::AddCourse(string id,string name,int num,int hours,vector<string> prc)
+{
+	Course c;
+	c.Code = id;
+	c.Hours = hours;
+	c.Name = name;
+	c.MaxNumOfStudents = num;
+	c.PreRequiredCourses = prc;
+	Courses.push_back(c);
 }
 User Database::GetUserByID(int userID)
 {

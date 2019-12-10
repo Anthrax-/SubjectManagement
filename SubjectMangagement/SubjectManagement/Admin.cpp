@@ -9,10 +9,6 @@ void Admin::AddNewCourse()
 }
 
 
-void Admin::EnterCoursePrerequisite()
-{
-}
-
 vector<Course> Admin::ViewAvilableCourses()
 {
 	return vector<Course>();

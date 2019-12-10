@@ -1,6 +1,8 @@
 #include<iostream>
 #include"CSVFile.h"
-
+#include "Course.h"
+#include<fstream>
+#include <string>
 using namespace std;
 string fun(vector<string>v)	
 {	
@@ -17,6 +19,7 @@ string fun(vector<string>v)
 }
 int main()
 {
-	
+	Course S;
+	S.GetStudents();
 	return 0;
 }
