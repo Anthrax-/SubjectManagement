@@ -16,22 +16,16 @@ vector<Student> Course::GetStudents()
 vector<string> Course::GetCoursesLines()
 {
 	vector<string> result;
-	string str;
+	string str="";
 	for (int i = 0; i < Database::Courses.size(); i++) {
-		str = "";
-		str.push_back(Course::Code',');
-		str.push_back(Course::Name','); 
-		str.push_back(Course::Hours',');
-		str.push_back(Course::MaxNumOfStudents',');
-		for (int i = 0; i < Course::PreRequiredCourses.size(); i++) {
-			str.push_back(Course::PreRequiredCourses[i]',');
+	
+		str.push_back(Database::Courses[i].code+','+ Database::Course[i].Name+','+ Database::Course[i].Hours+','+ Database::Course[i].MaxNumOfStudents+',');
+		for (int j = 0; j < Database::Courses[i].PreRequiredCourses.size(); j++) {
+			str.push_back(Database::Courses[i].PreRequiredCourses[j]+',');
 		}str.pop_back();
 		result.push_back(str);
 		
 	}return result;
-	//loop in all the elements in the database::courses and generate a string line that contains the data comma separated
-	//see the loadcourses function to know the order of the data
-	//ex : code,name,hourse,maxnumberofstudents,prerequiredcourse1,prerequiredcourse2,......
 }
 vector<Course> Course::LoadCourses()
 {
