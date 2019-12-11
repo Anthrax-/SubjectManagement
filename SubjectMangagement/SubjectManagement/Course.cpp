@@ -18,13 +18,13 @@ vector<string> Course::GetCoursesLines()
 	vector<string> result;
 	string str = "";
 	for (int i = 0; i < Database::Courses.size(); i++) {
-		str.push_back(Database::Courses[i].Code + ',' + Database::Courses[i].Name + ',' + Database::Courses[i].Hours + ',' + Database::Courses[i].MaxNumOfStudents + ',');
+		str.push_back(Database::Courses[i].Code + ',' + Database::Courses[i].Name +','+ Database::Courses[i].Hours+',' + Database::Courses[i].MaxNumOfStudents + ',');
 		for (int j = 0; j < Database::Courses[i].PreRequiredCourses.size(); j++) {
 			str.push_back(Database::Courses[i].PreRequiredCourses[j] + ',');
 		}str.pop_back();
 		result.push_back(str);
 	
-	}return result;
+	}
 	
 return result;
 }
