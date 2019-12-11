@@ -14,7 +14,8 @@ public:
 	bool HaveFinishedCourse(string courseid);
 	static vector<Student> LoadStudents();
 	static vector<string> GetStudentLines();
-
+	static string Studentt(Student student);
+	static string Studenttt(Student student);
 	Student();
 	~Student();
 };

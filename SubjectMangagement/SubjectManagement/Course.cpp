@@ -16,16 +16,8 @@ vector<Student> Course::GetStudents()
 vector<string> Course::GetCoursesLines()
 {
 	vector<string> result;
-	string str="";
-	for (int i = 0; i < Database::Courses.size(); i++) {
 	
-		str.push_back(Database::Courses[i].code+','+ Database::Course[i].Name+','+ Database::Course[i].Hours+','+ Database::Course[i].MaxNumOfStudents+',');
-		for (int j = 0; j < Database::Courses[i].PreRequiredCourses.size(); j++) {
-			str.push_back(Database::Courses[i].PreRequiredCourses[j]+',');
-		}str.pop_back();
-		result.push_back(str);
-		
-	}return result;
+return result;
 }
 vector<Course> Course::LoadCourses()
 {
