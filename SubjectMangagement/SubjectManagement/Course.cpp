@@ -17,7 +17,7 @@ vector<string> Course::GetCoursesLines()//yong
 {
 	//loop in all the elements in the database::courses and generate a string line that contains the data comma separated
 	//see the loadcourses function to know the order of the data
-	//ex : code,name,hourse,maxnumberofstudents,prerequiredcourse1,prerequiredcourse2,......
+	//ex : code,name,hours,maxnumberofstudents,---------------------------------------------------------------------------,prerequiredcourse2,......
 }
 vector<Course> Course::LoadCourses()
 {
