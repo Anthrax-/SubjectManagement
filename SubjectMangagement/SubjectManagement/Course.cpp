@@ -13,11 +13,20 @@ vector<Student> Course::GetStudents()
 	}
 	return result;
 }
-vector<string> Course::GetCoursesLines()//yong
+vector<string> Course::GetCoursesLines()
 {
-	//loop in all the elements in the database::courses and generate a string line that contains the data comma separated
-	//see the loadcourses function to know the order of the data
-	//ex : code,name,hours,maxnumberofstudents,---------------------------------------------------------------------------,prerequiredcourse2,......
+	vector<string> result;
+	string str = "";
+	for (int i = 0; i < Database::Courses.size(); i++) {
+		str.push_back(Database::Courses[i].Code + ',' + Database::Courses[i].Name +','+ Database::Courses[i].Hours+',' + Database::Courses[i].MaxNumOfStudents + ',');
+		for (int j = 0; j < Database::Courses[i].PreRequiredCourses.size(); j++) {
+			str.push_back(Database::Courses[i].PreRequiredCourses[j] + ',');
+		}str.pop_back();
+		result.push_back(str);
+	
+	}
+	
+return result;
 }
 vector<Course> Course::LoadCourses()
 {

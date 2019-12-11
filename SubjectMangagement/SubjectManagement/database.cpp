@@ -74,10 +74,14 @@ User Database::GetUserByUsername(string username)
 Student Database::GetStudentByID(int userID)//samer
 {
 	//msh m7taga 7aga y3ny zy getuserbyid
+	Student s;
+	return s;
 }
 Student Database::GetStudentByUsername(string username)
 {
 	//msh m7taga 7aga y3ny zy getuserbyusername
+	Student s;
+	return s;
 }
 vector<User> Database::GetUsers(int Role)
 {

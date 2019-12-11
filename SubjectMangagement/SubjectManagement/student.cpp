@@ -71,9 +71,43 @@ vector<Student> Student::LoadStudents()
 
 vector<string> Student::GetStudentLines()//farah
 {
-	//loop through all students in database::students
-	//write all the variables in the student in order (take the order from the load function) and separate each value by ,
+	vector<string> result;
+	for (int i = 0; i < Database::Students.size(); i++)
+	{
+		string s;
+		Student student = Database::Students[i];
+
+		s += student.ID + "," + to_string(student.Academicyear) + "," + to_string(student.FinishedCourses.size()) + "," + to_string(student.CoursesInProgress.size()) ;
+		for (int i = 0; i < student.FinishedCourses.size(); i++)
+		{
+			s += ","+student.FinishedCourses[i];
+			
+		}
+		for (int i = 0; i < student.CoursesInProgress.size(); i++)
+		{
+
+			s +=","+ student.CoursesInProgress[i];
+		
+		}
+		result.push_back(s);
+		s = "";
+		
+	}
 	//ex:id,academicyear,number of finished courses,number of courses in progress,coursefinished1,coursefinished2,coursefinished3,....,courseinprogress1,courseinprogress2,....
+	return result;
+}
+
+string Student::Studenttt(Student student)
+{
+	string l;
+	for (int i = 0; i < student.CoursesInProgress.size(); i++)
+	{
+		
+		l += student.CoursesInProgress[i];
+		if (i != (student.CoursesInProgress.size() - 1))
+			l += ",";
+	}
+	return l;
 }
 
 Student::Student()

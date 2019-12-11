@@ -30,4 +30,5 @@ vector<string> User::GetUsersLines()//godzilla
 	//use the user::loadusers to know the order of the data
 	//ex:id,name,password,role
 	//returns a vector of strings
+	return vector<string>();
 }
