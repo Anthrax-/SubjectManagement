@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "student.h"
+#include "Student.h"
+
 using namespace std;
 class Course
 {
@@ -11,7 +12,8 @@ class Course
 	int MaxNumOfStudents;
 	int Hours;
 	vector<string> PreRequiredCourses;
+	vector<Student> GetStudents();
+	static vector<string> GetCoursesLines();
 	static vector<Course> LoadCourses();
-	vector<student> GetStudents();
 };
 

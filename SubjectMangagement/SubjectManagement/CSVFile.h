@@ -1,7 +1,7 @@
+#pragma once
 #include <string>
 #include <fstream>
 #include <vector>
-#pragma once
 using namespace std;
 class CSVFile
 {

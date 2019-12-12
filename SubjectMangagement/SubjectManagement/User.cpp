@@ -23,3 +23,12 @@ vector<User> User::LoadUsers()
 	}
 	return Result;
 }
+
+vector<string> User::GetUsersLines()//godzilla
+{
+	//loop through all users in the database::users and create a line for each user with the data comma separated
+	//use the user::loadusers to know the order of the data
+	//ex:id,name,password,role
+	//returns a vector of strings
+	return vector<string>();
+}

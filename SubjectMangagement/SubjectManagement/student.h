@@ -1,23 +1,21 @@
 #pragma once
-#include"Course.h"
 #include"User.h"
-#include"vector"
-class student : public User  
+#include<vector>
+class Course;
+class Student : public User  
 	
 {
 public:
-	student(int userID);
+	Student(int userID);
 	int Academicyear;
 	vector<string> FinishedCourses,CoursesInProgress;
-	void Editdata();
-	bool CanTakeCourse(Course course);
+	bool CanTakeCourse(Course c);
 	bool HaveCourseInProgress(string courseid);
 	bool HaveFinishedCourse(string courseid);
-	void viewcourses();
-	void registerforacourse();
-	void viewcoursedetails();
-	void viewavailablecourses();
-	static vector<student> LoadStudents();
-	student();
-	~student();
+	static vector<Student> LoadStudents();
+	static vector<string> GetStudentLines();
+	static string Studentt(Student student);
+	static string Studenttt(Student student);
+	Student();
+	~Student();
 };

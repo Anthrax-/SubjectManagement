@@ -1,8 +1,8 @@
-#include "student.h"
+#include "Student.h"
 #include "database.h"
 #include "CSVFile.h"
-
-student::student(int userID)
+#include"Course.h"
+Student::Student(int userID)
 {
 	auto user = Database::GetUserByID(userID);
 	User::Name = user.Name;
@@ -14,14 +14,20 @@ student::student(int userID)
 
 
 
-bool student::CanTakeCourse(Course course)//godzilla
+
+
+bool Student::CanTakeCourse(Course c)
 {
-	//check the course pre-required courses and check if the student have studed them or no 
-	//if he has studed them return yes else return no
-	return false;
+	for (int i = 0; i < c.PreRequiredCourses.size(); i++)
+	{
+		string courseid = c.PreRequiredCourses[i];
+		if (HaveFinishedCourse(courseid) == false)
+			return false;
+	} 
+	return true;
 }
 
-bool student::HaveCourseInProgress(string courseid)
+bool Student::HaveCourseInProgress(string courseid)
 {
 	for (auto course : CoursesInProgress)
 	{
@@ -31,7 +37,7 @@ bool student::HaveCourseInProgress(string courseid)
 	return false;
 }
 
-bool student::HaveFinishedCourse(string courseid)
+bool Student::HaveFinishedCourse(string courseid)
 {
 	for (auto course : FinishedCourses)
 	{
@@ -41,15 +47,15 @@ bool student::HaveFinishedCourse(string courseid)
 	return false;
 }
 
-vector<student> student::LoadStudents()
+vector<Student> Student::LoadStudents()
 {
-	vector<student> result;
+	vector<Student> result;
 	CSVFile StudFile("Students.csv");
 	auto lines = StudFile.Load();
 	for (auto line : lines)
 	{
-		auto parsedLine = CSVFile::ParseLine(line);
-		student std(stoi(parsedLine[0]));
+		vector<string> parsedLine = CSVFile::ParseLine(line);
+		Student std(stoi(parsedLine[0]));
 		std.Academicyear = stoi(parsedLine[1]);
 		auto numFinished = stoi(parsedLine[2]);
 		auto numProgrs = stoi(parsedLine[3]);
@@ -63,11 +69,52 @@ vector<student> student::LoadStudents()
 	return result;
 }
 
-student::student()
+vector<string> Student::GetStudentLines()//farah
+{
+	vector<string> result;
+	for (int i = 0; i < Database::Students.size(); i++)
+	{
+		string s;
+		Student student = Database::Students[i];
+
+		s += student.ID + "," + to_string(student.Academicyear) + "," + to_string(student.FinishedCourses.size()) + "," + to_string(student.CoursesInProgress.size()) ;
+		for (int i = 0; i < student.FinishedCourses.size(); i++)
+		{
+			s += ","+student.FinishedCourses[i];
+			
+		}
+		for (int i = 0; i < student.CoursesInProgress.size(); i++)
+		{
+
+			s +=","+ student.CoursesInProgress[i];
+		
+		}
+		result.push_back(s);
+		s = "";
+		
+	}
+	//ex:id,academicyear,number of finished courses,number of courses in progress,coursefinished1,coursefinished2,coursefinished3,....,courseinprogress1,courseinprogress2,....
+	return result;
+}
+
+string Student::Studenttt(Student student)
+{
+	string l;
+	for (int i = 0; i < student.CoursesInProgress.size(); i++)
+	{
+		
+		l += student.CoursesInProgress[i];
+		if (i != (student.CoursesInProgress.size() - 1))
+			l += ",";
+	}
+	return l;
+}
+
+Student::Student()
 {
 }
 
 
-student::~student()
+Student::~Student()
 {
 }
