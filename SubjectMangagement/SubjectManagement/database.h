@@ -6,9 +6,9 @@
 class Database
 {
 	public:
-	static vector<Course> Courses;
-	static vector<User> Users;
-	static vector<student>Students;
+	static vector<Course*> Courses;
+	static vector<User*> Users;
+	static vector<student*>Students;
 
 
 	Database();
