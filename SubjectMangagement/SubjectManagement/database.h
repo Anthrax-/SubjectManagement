@@ -17,8 +17,8 @@ class Database
 	static void Save();
 	static vector<Course*> GetPreRequiredCourses(Course course);
 	static Course* GetCourse(string courseID);
-	void AddStudent(int ID, int Year, vector<string> FCourses, vector<string> CinProgress);
-	void AddCourse(string id, string name, int num, int hours, vector<string> prc);
+	static void AddStudent(int ID, int Year, vector<string> FCourses, vector<string> CinProgress);
+	static void AddCourse(string id, string name, int num, int hours, vector<string> prc);
 	static User* GetUserByID(int userID);
 	static User* GetUserByUsername(string username);
 	static Student* GetStudentByID(int userID);
